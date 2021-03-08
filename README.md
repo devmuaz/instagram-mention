@@ -1,6 +1,6 @@
 ## Instagram Mention Widgets
 
-![Instagram CustomPainter](/images/instagram_widget.png)
+![Instagram CustomPainter](https://github.com/devmuaz/instagram_mention/blob/master/images/instagram_widget.png)
 
 ### 'small details do matter' ❤️
 
@@ -51,7 +51,7 @@ class MyHomePage extends StatelessWidget {
 
 ## Demo
 
-![Instagram CustomPainter](/images/main_demo.png)
+![Instagram CustomPainter](https://github.com/devmuaz/instagram_mention/blob/master/images/main_demo.png)
 
 ## Medium articles by the author
 
