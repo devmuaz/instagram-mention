@@ -9,8 +9,8 @@ class InstagramMention extends StatelessWidget {
   /// Creates an [Instagram] widget contains only [text] value.
   ///
   InstagramMention({
-    Key key,
-    @required this.text,
+    Key? key,
+    required this.text,
     this.textStyle = const TextStyle(fontSize: 16, color: Colors.white),
     this.padding = const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
     this.margin,
@@ -20,8 +20,7 @@ class InstagramMention extends StatelessWidget {
     this.triangleHeight = 8,
     this.triangleRadius = 2,
     this.color = Colors.black,
-  })  : assert(text != null, 'text property must not be null.'),
-        assert(text.trim().isNotEmpty, 'text value must not be empty.'),
+  })  : assert(text.trim().isNotEmpty, 'text value must not be empty.'),
         super(key: key);
 
   /// The text value.
@@ -34,7 +33,7 @@ class InstagramMention extends StatelessWidget {
   final EdgeInsetsGeometry padding;
 
   /// margin.
-  final EdgeInsetsGeometry margin;
+  final EdgeInsetsGeometry? margin;
 
   /// The color of the painted shape.
   final Color color;

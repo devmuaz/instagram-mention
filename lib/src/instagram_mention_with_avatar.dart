@@ -8,9 +8,9 @@ class InstagramMentionWithAvatar extends StatelessWidget {
   /// [Circle Image] and the [Text] value.
   ///
   InstagramMentionWithAvatar({
-    Key key,
-    @required this.image,
-    @required this.text,
+    Key? key,
+    required this.image,
+    required this.text,
     this.textStyle = const TextStyle(fontSize: 16, color: Colors.white),
     this.padding = const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
     this.imageRadius = 12,
@@ -22,9 +22,7 @@ class InstagramMentionWithAvatar extends StatelessWidget {
     this.triangleRadius = 2,
     this.color = Colors.black,
     this.spaceBetween = 10,
-  })  : assert(text != null, 'text property must not be null.'),
-        assert(text.trim().isNotEmpty, 'text value must not be empty.'),
-        assert(image != null, 'image property must not be null.'),
+  })  : assert(text.trim().isNotEmpty, 'text value must not be empty.'),
         super(key: key);
 
   /// The circular image besides the text.
@@ -40,7 +38,7 @@ class InstagramMentionWithAvatar extends StatelessWidget {
   final EdgeInsetsGeometry padding;
 
   /// margin.
-  final EdgeInsetsGeometry margin;
+  final EdgeInsetsGeometry? margin;
 
   /// The size [radius] of the circular image.
   final double imageRadius;
