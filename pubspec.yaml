@@ -1,10 +1,10 @@
 name: instagram_mention
 description: A simple detailed flutter widget that looks almost the same as the real instagram mention widget.
-version: 0.0.1+1
+version: 1.0.0
 homepage: https://github.com/devmuaz/instagram_mention
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
