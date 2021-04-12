@@ -6,12 +6,12 @@ class RectangleWithNotchPainter extends CustomPainter {
   /// below the shape.
   ///
   const RectangleWithNotchPainter({
-    this.color,
-    this.radius,
-    this.shadow,
-    this.triangleWidth,
-    this.triangleHeight,
-    this.triangleRadius,
+    required this.color,
+    required this.radius,
+    required this.shadow,
+    required this.triangleWidth,
+    required this.triangleHeight,
+    required this.triangleRadius,
   });
 
   /// The color of the painted shape.
@@ -54,19 +54,32 @@ class RectangleWithNotchPainter extends CustomPainter {
     final Offset bottomRightControlPoint = Offset(size.width, size.height);
 
     // triangle points
-    final Offset bottomCenterStartPoint = Offset((size.width / 2) - triangleWidth - triangleRadius, size.height);
-    final Offset bottomCenterStartPoint2 = Offset((size.width / 2) - triangleWidth + triangleRadius, size.height + triangleRadius);
+    final Offset bottomCenterStartPoint =
+        Offset((size.width / 2) - triangleWidth - triangleRadius, size.height);
+    final Offset bottomCenterStartPoint2 = Offset(
+        (size.width / 2) - triangleWidth + triangleRadius,
+        size.height + triangleRadius);
 
-    final Offset bottomCenterMiddlePoint = Offset((size.width / 2) - triangleRadius, size.height + triangleHeight - triangleRadius);
-    final Offset bottomCenterMiddlePoint2 = Offset((size.width / 2) + triangleRadius, size.height + triangleHeight - triangleRadius);
+    final Offset bottomCenterMiddlePoint = Offset(
+        (size.width / 2) - triangleRadius,
+        size.height + triangleHeight - triangleRadius);
+    final Offset bottomCenterMiddlePoint2 = Offset(
+        (size.width / 2) + triangleRadius,
+        size.height + triangleHeight - triangleRadius);
 
-    final Offset bottomCenterEndPoint = Offset((size.width / 2) + triangleWidth - triangleRadius, size.height + triangleRadius);
-    final Offset bottomCenterEndPoint2 = Offset((size.width / 2) + triangleWidth + triangleRadius, size.height);
+    final Offset bottomCenterEndPoint = Offset(
+        (size.width / 2) + triangleWidth - triangleRadius,
+        size.height + triangleRadius);
+    final Offset bottomCenterEndPoint2 =
+        Offset((size.width / 2) + triangleWidth + triangleRadius, size.height);
 
     // triangle control points
-    final Offset bottomCenterStartControlPoint = Offset((size.width / 2) - triangleWidth, size.height);
-    final Offset bottomCenterMiddleControlPoint = Offset(size.width / 2, size.height + triangleHeight);
-    final Offset bottomCenterEndControlPoint = Offset((size.width / 2) + triangleWidth, size.height);
+    final Offset bottomCenterStartControlPoint =
+        Offset((size.width / 2) - triangleWidth, size.height);
+    final Offset bottomCenterMiddleControlPoint =
+        Offset(size.width / 2, size.height + triangleHeight);
+    final Offset bottomCenterEndControlPoint =
+        Offset((size.width / 2) + triangleWidth, size.height);
 
     final Paint paint = Paint()
       ..color = color
@@ -75,19 +88,38 @@ class RectangleWithNotchPainter extends CustomPainter {
     final Path path = Path()
       ..moveTo(leftLineStartPoint.dx, leftLineStartPoint.dy)
       ..lineTo(leftLineEndPoint.dx, leftLineEndPoint.dy)
-      ..quadraticBezierTo(bottomLeftControlPoint.dx, bottomLeftControlPoint.dy, bottomLineStartPoint.dx, bottomLineStartPoint.dy)
+      ..quadraticBezierTo(bottomLeftControlPoint.dx, bottomLeftControlPoint.dy,
+          bottomLineStartPoint.dx, bottomLineStartPoint.dy)
       ..lineTo(bottomCenterStartPoint.dx, bottomCenterStartPoint.dy)
-      ..quadraticBezierTo(bottomCenterStartControlPoint.dx, bottomCenterStartControlPoint.dy, bottomCenterStartPoint2.dx, bottomCenterStartPoint2.dy)
+      ..quadraticBezierTo(
+          bottomCenterStartControlPoint.dx,
+          bottomCenterStartControlPoint.dy,
+          bottomCenterStartPoint2.dx,
+          bottomCenterStartPoint2.dy)
       ..lineTo(bottomCenterMiddlePoint.dx, bottomCenterMiddlePoint.dy)
-      ..quadraticBezierTo(bottomCenterMiddleControlPoint.dx, bottomCenterMiddleControlPoint.dy, bottomCenterMiddlePoint2.dx, bottomCenterMiddlePoint2.dy)
+      ..quadraticBezierTo(
+          bottomCenterMiddleControlPoint.dx,
+          bottomCenterMiddleControlPoint.dy,
+          bottomCenterMiddlePoint2.dx,
+          bottomCenterMiddlePoint2.dy)
       ..lineTo(bottomCenterEndPoint.dx, bottomCenterEndPoint.dy)
-      ..quadraticBezierTo(bottomCenterEndControlPoint.dx, bottomCenterEndControlPoint.dy, bottomCenterEndPoint2.dx, bottomCenterEndPoint2.dy)
+      ..quadraticBezierTo(
+          bottomCenterEndControlPoint.dx,
+          bottomCenterEndControlPoint.dy,
+          bottomCenterEndPoint2.dx,
+          bottomCenterEndPoint2.dy)
       ..lineTo(bottomLineEndPoint.dx, bottomLineEndPoint.dy)
-      ..quadraticBezierTo(bottomRightControlPoint.dx, bottomRightControlPoint.dy, rightLineStartPoint.dx, rightLineStartPoint.dy)
+      ..quadraticBezierTo(
+          bottomRightControlPoint.dx,
+          bottomRightControlPoint.dy,
+          rightLineStartPoint.dx,
+          rightLineStartPoint.dy)
       ..lineTo(rightLineEndPoint.dx, rightLineEndPoint.dy)
-      ..quadraticBezierTo(topRightControlPoint.dx, topRightControlPoint.dy, topLineStartPoint.dx, topLineStartPoint.dy)
+      ..quadraticBezierTo(topRightControlPoint.dx, topRightControlPoint.dy,
+          topLineStartPoint.dx, topLineStartPoint.dy)
       ..lineTo(topLineEndPoint.dx, topLineEndPoint.dy)
-      ..quadraticBezierTo(topLeftControlPoint.dx, topLeftControlPoint.dy, leftLineStartPoint.dx, leftLineStartPoint.dy);
+      ..quadraticBezierTo(topLeftControlPoint.dx, topLeftControlPoint.dy,
+          leftLineStartPoint.dx, leftLineStartPoint.dy);
 
     canvas.drawPath(path, paint);
   }
