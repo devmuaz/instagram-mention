@@ -1,3 +1,8 @@
+## 1.0.0+3
+
+- Fixed static analysis
+- Updated README.md file
+
 ## 1.0.0+2
 
 - README.md and LICENSE files are updated

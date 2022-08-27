@@ -50,6 +50,8 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
+Or, you can use the custom `Painter` class that I've provided `RectangleWithNotchPainter` so you can apply the painting style to any widget you like.
+
 ## Demo
 
 ![Instagram CustomPainter](https://github.com/devmuaz/instagram_mention/blob/master/images/main_demo.png)
