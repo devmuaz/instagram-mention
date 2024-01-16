@@ -1,3 +1,7 @@
+## 1.0.1
+
+- Updated Dart SDK to `v3.0.1`
+
 ## 1.0.0+3
 
 - Fixed static analysis
